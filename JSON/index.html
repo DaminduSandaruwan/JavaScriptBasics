@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>    
+    <script>
+        let student =`[
+            {
+                "name":"Damindu",
+                "age":23,
+                "height":170
+            },
+            {
+                "name":"Sandaruwan",
+                "age":25,
+                "height":180
+            }
+        ]`
+        console.log(JSON.parse(student)[1]);
+        console.log(JSON.parse(student)[1].age);
+    </script>
+    <script src="home.js"></script>
+</body>
+</html>
