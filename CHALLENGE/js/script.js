@@ -20,8 +20,10 @@ function reset(){
 function generateDog(){
     var image = document.createElement('img');
     var div = document.getElementById('flex-dog-gen');
-    image.src = "download.jpg";
-    image.width=370;
-    image.height =250;
+    image.src = "assets/dog.jpg";
+    image.width=350;
+    image.height =230;
     div.appendChild(image);
 }
+
+//CHALLENGE 3
