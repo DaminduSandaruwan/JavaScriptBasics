@@ -17,3 +17,11 @@ function reset(){
 
 //CHALLENGE 2
 
+function generateDog(){
+    var image = document.createElement('img');
+    var div = document.getElementById('flex-dog-gen');
+    image.src = "download.jpg";
+    image.width=370;
+    image.height =250;
+    div.appendChild(image);
+}

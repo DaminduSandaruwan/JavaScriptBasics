@@ -22,20 +22,23 @@
 }
  
 .container-2{
-    border: 1px solid red;
+    border: 1px solid black;
     width: 75%;
     margin: 0 auto;
     text-align: center;
 }
 .flex-box-container-2{
     display: flex;
+    border: 1px solid black;
+    padding: 10px;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
-    border: 1px solid blue;
 }
 
 .flex-box-container-2 img{
-    border: 1px solid green;
-    padding: 10px;
+    /* border: 1px solid green; */
+    /* padding: 10px; */
+    box-shadow: 0px 10px 50px rgba(0,0,0,0.7);
 
 }
