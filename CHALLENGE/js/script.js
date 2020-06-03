@@ -14,3 +14,6 @@ function ageInDays(){
 function reset(){
     document.getElementById('ageInDays').remove();
 }
+
+//CHALLENGE 2
+
