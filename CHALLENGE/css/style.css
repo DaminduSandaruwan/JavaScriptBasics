@@ -1,11 +1,12 @@
-.container-1,.container-2, .container-3, .container-4{
+.container-1,.container-2, .container-3, .container-4,.container-5{
     border: 1px solid black;
     width: 75%;
     margin: 0 auto;
     text-align: center;
 }
 
-.flex-box-container-1, .flex-box-container-2, .flex-box-rps, .flex-box-pick-color{
+.flex-box-container-1, .flex-box-container-2, .flex-box-rps, .flex-box-pick-color, 
+.flex-blackjack-row-1,.flex-blackjack-row-2,.flex-blackjack-row-3{
     display: flex;
     border: 1px solid black;
     padding: 10px;
@@ -14,8 +15,41 @@
     justify-content: space-around;
 }
 
+.flex-blackjack-row-1, .flex-blackjack-row-2{
+    /* background: url('../assets/back.jpg') center ; */
+    background-color:rgb(34, 93, 25);
+    color: #ffffff;
+}
+
+
+.flex-blackjack-row-1 div{
+    border: 1px solid black;
+    padding: 10px;
+    flex: 1;
+    height: 350px;
+    text-align: center;
+
+}
+
+.flex-blackjack-row-2 div{
+    border: 1px solid black; 
+    padding: 10px;
+    
+}
+
+.flex-blackjack-row-1 img{
+    width: 25%;
+
+}
+
+.flex-blackjack-row-2 button{
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
 .flex-box-container-1 div{
-    display: flex;
+    display: flex; 
     padding: 10px;
     border: 1px solid black;
     align-items: center;
@@ -33,3 +67,8 @@
 }
 
 
+table,th,td{
+    padding: 5px;
+    border: 1px solid black;
+    ;
+}
