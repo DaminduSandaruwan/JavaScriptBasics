@@ -156,3 +156,5 @@ function buttonRandom(){
         all_button[i].classList.add(choices[randomNumber]);
     }
 }
+
+//CHALLENGE 5
