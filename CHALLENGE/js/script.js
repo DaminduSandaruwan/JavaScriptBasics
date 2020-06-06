@@ -169,13 +169,23 @@ const DEALER = blackjackGame['dealer'];
 const hitSound = new Audio('sounds/swish.m4a');
 
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackhit);
+document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);
+
 
 function blackjackhit(){
     // alert('hit clicked');
-    let cardImage = document.createElement('img');
-    cardImage.src= 'images/Q.png';
-    document.querySelector(YOU['div']).appendChild(cardImage);
-    hitSound.play();
-
+    showCard(YOU);
 }
 
+function showCard(activePlayer){
+    let cardImage = document.createElement('img');
+    cardImage.src= 'images/Q.png';
+    document.querySelector(activePlayer['div']).appendChild(cardImage);
+    hitSound.play();
+}
+
+function blackjackDeal(){
+    let yourImage= document.querySelector('#your-box').querySelectorAll('img');
+    console.log(yourImage);
+    yourImage[0].remove();
+}
