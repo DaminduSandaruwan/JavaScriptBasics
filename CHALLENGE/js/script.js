@@ -211,7 +211,16 @@ function blackjackDeal(){
 }
 
 function updateScore(card, activePlayer){
-    activePlayer['score']+=blackjackGame['cardsMap'][card];
+    if(card==='A'){
+         //If adding keeps me below 21, add 11 otherwise add 1
+        if(activePlayer['score']+ blackjackGame['cardsMap'][card][1]<21){
+            activePlayer['score']+=blackjackGame['cardsMap'][card][1];
+        }else{
+            activePlayer['score'] += blackjackGame['cardsMap'][card][0];
+        }
+    }else{
+        activePlayer['score']+=blackjackGame['cardsMap'][card];
+    }  
 }
 
 function showScore(activePlayer){
