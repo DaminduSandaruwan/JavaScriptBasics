@@ -160,7 +160,7 @@ function buttonRandom(){
 //CHALLENGE 5
 let blackjackGame={
     'you': {'scoreSpan':'#your-blackjack-result','div':'#your-box','score':0},
-    'dealer': {'scoreSpan':'#your-blackjack-result','div':'#dealer-box','score':0},
+    'dealer': {'scoreSpan':'#dealer-blackjack-result','div':'#dealer-box','score':0},
     'cards':['2','3','4','5','6','7','8','9','10','K','J','Q','A'],
     'cardsMap':{'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'K':10,'J':10,'Q':10,'A':[1,11]}
 };
@@ -190,10 +190,12 @@ function randomCard(){
 }
 
 function showCard(card,activePlayer){
-    let cardImage = document.createElement('img');
-    cardImage.src= `images/${card}.png`;
-    document.querySelector(activePlayer['div']).appendChild(cardImage);
-    hitSound.play();
+    if(activePlayer['score']<=21){
+        let cardImage = document.createElement('img');
+        cardImage.src= `images/${card}.png`;
+        document.querySelector(activePlayer['div']).appendChild(cardImage);
+        hitSound.play();
+    }
 }
 
 function blackjackDeal(){
@@ -208,6 +210,15 @@ function blackjackDeal(){
     for(i=0; i<dealerImage.length; i++){
         dealerImage[i].remove();
     }
+
+    YOU['score'] = 0;
+    DEALER['score'] = 0;
+
+    document.querySelector('#your-blackjack-result').textContent=0;
+    document.querySelector('#dealer-blackjack-result').textContent=0;
+
+    document.querySelector('#your-blackjack-result').style.color='#ffffff';
+    document.querySelector('#dealer-blackjack-result').style.color='#ffffff';
 }
 
 function updateScore(card, activePlayer){
@@ -224,5 +235,11 @@ function updateScore(card, activePlayer){
 }
 
 function showScore(activePlayer){
-    document.querySelector(activePlayer['scoreSpan']).textContent= activePlayer['score'];
+    if(activePlayer['score']>21){
+        document.querySelector(activePlayer['scoreSpan']).textContent='BUST';
+        document.querySelector(activePlayer['scoreSpan']).style.color='red';
+    }else{
+        document.querySelector(activePlayer['scoreSpan']).textContent= activePlayer['score'];
+    }
+    
 }
